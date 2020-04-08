@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title><%= @title %></title>
+    </head>
+    <body>
+        <form action="/cip" method="post">
+            <h4><%= @title %></h4>
+            <p><%= @subtitle %></p>
+            <input type="text" name="sts1">
+            <input type="submit"  value="暗号">
+            <br>
+            <span><%= @before1 %></span>
+            <br>
+            <span><%= @result1 %></span>
+        </form>
+        <br>
+        <form action="/dec" method="post">
+          <input type="text" name="sts2">
+          <input type="submit"  value="復号">
+          <br>
+          <span><%= @before2 %></span>
+          <br>
+          <span><%= @result2 %></span>
+        </form>
+    </body>
+</html>
