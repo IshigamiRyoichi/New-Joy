@@ -12,6 +12,8 @@ class App < Sinatra::Base
     post '/cip' do
         @title = '暗号復号ツール!'
         @subtitle = '使ってね！'
+        @result3 = ""
+        @result4 = ""
         @before1 = params[:sts1].to_s
         keyword = params[:sts1].to_s
         code = [] #暗号化した文字列を収納するための配列を定義
@@ -57,7 +59,10 @@ class App < Sinatra::Base
                 else
                     j = j + 1
                 end
-            end    
+            else
+                @result3 = "日本語は使えません"
+                next
+            end
             code << num5.chr
         end
         @result1 = code.join("")
@@ -112,6 +117,9 @@ class App < Sinatra::Base
                 else
                     j = j + 1
                 end 
+            else
+                @result4 = "日本語は使えません"
+                next
             end
             code << num5.chr
         end
